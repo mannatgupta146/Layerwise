@@ -4,10 +4,41 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #fff;
 }
 
 body, html{
     width: 100%;
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Gilroy', sans-serif;
+}
+
+#page1{
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#page1 h1{
+    font-size: 8.5vw;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 8.5vw;
+}
+
+#page1 h1 svg{
+    height: 6vw;
+    width: 6vw;
+    background-color: green;
+    border-radius: 50%;
+}
+
+#page2{
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
 }
