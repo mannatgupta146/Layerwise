@@ -13,7 +13,7 @@ function navAnimation() {
         tl = gsap.timeline();
 
         tl.to(navBottom, {
-            height: "22vh",
+            height: "25vh",
             duration: 0.4,
             ease: "power2.out"
         });
