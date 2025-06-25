@@ -33,7 +33,7 @@ body, html{
 #page1 h1 svg{
     height: 6vw;
     width: 6vw;
-    background-color: green;
+    background-color: #0DA34E;
     border-radius: 50%;
 }
 
