@@ -13,6 +13,77 @@ body, html{
     font-family: 'Gilroy', sans-serif;
 }
 
+nav{
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2vw 10vw;
+    justify-content: space-between;
+    height: 12vh;
+    z-index: 10;
+    background-color: #111;
+}
+
+nav h1{
+    font-size: 1.5vw;
+}
+
+.navbar{
+    display: flex;
+    gap: 2vw;
+    align-items: flex-start;
+    padding: 1vh 0;
+    position: relative; 
+    z-index: 10;
+}
+
+.navbar h4{
+    font-size: 0.9vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2.2vw;
+}
+
+.navbar h5{
+     margin-bottom: 1vw;
+     display: none;
+     overflow: hidden;
+}
+
+.navbar h5 span{
+    font-weight: 400;
+    font-size: 0.8vw;
+    display: inline-block;
+}
+
+nav button{
+    background-color: #0DA34E;
+    font-size: 0.8vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 50px;
+    border: none;
+}
+
+nav button svg{
+    height: 0.8vw;
+    margin-left: 1.5vw;
+}
+
+#nav-bottom{
+    width: 80%;
+    height: 0vh;
+    position: absolute;
+    top: 100%;
+    z-index: 9;
+    background-color: #111;
+    border-bottom: 1px solid #fff;
+}
+
 #page1{
     width: 100%;
     height: 100vh;
@@ -35,6 +106,34 @@ body, html{
     width: 6vw;
     background-color: #0DA34E;
     border-radius: 50%;
+}
+
+#page1 p{
+    text-align: center;
+    font-size: 1.2vw;
+    font-weight: 400;
+    margin-top: 3vh;
+}
+
+#page1-elem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page1-elem h4{
+    font-weight: 400;
+    font-size: 1vw;
+    text-transform: lowercase;
+    margin-top: 1vh;
+    padding: 5px 10px;
+    border: 1px solid #a5a5a5;
+    border-radius: 50px;
+}
+
+#page1-elem h4:nth-last-child(2){
+    border: none;
+    padding: 2px;
 }
 
 #page2{
