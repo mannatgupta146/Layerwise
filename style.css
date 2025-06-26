@@ -27,6 +27,12 @@ nav{
 
 nav h1{
     font-size: 1.5vw;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+nav h1:hover {
+  transform: scale(0.8); 
 }
 
 .navbar{
@@ -121,7 +127,7 @@ nav button svg{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.3vw;
+    gap: 0.5vw;
 }
 
 #page1-elem h4{
@@ -132,6 +138,12 @@ nav button svg{
     padding: 5px 10px;
     border: 1px solid #a5a5a5;
     border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#page1-elem h4:hover {
+  transform: scale(1.1); 
 }
 
 #page1-elem h4:nth-last-child(2){

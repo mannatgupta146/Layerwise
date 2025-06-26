@@ -4,7 +4,7 @@ Shery.makeMagnet("nav h5" );
 
 Shery.textAnimate("nav h4", {
   style: 1,
-  y: 5,
+  y: 1,
   delay: 0.1,
   duration: 1,
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
