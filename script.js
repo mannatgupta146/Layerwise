@@ -32,7 +32,7 @@ function navAnimation() {
 
         tl.to(navBottom, {
             height: "25vh",
-            duration: 0.4,
+            duration: 0.2,
             ease: "power2.out"
         });
 
@@ -69,7 +69,7 @@ function navAnimation() {
 
         tl.to(navBottom, {
             height: 0,
-            duration: 0.1,
+            duration: 0.05,
             ease: "power2.inOut"
         }, "<");
     });

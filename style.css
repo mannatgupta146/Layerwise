@@ -92,7 +92,8 @@ nav button svg{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* 👈 Change from center */
+    padding-top: 20vh;
 }
 
 #page1 h1{
