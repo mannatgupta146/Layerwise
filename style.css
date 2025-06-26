@@ -49,6 +49,7 @@ nav h1{
      margin-bottom: 1vw;
      display: none;
      overflow: hidden;
+     cursor: pointer;
 }
 
 .navbar h5 span{
@@ -119,6 +120,7 @@ nav button svg{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.3vw;
 }
 
 #page1-elem h4{
