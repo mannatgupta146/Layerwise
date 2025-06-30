@@ -211,6 +211,7 @@ nav button svg{
     background-color: #111;
     position: relative;
     padding: 2vw 10vw;
+    padding-bottom: 8vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -220,11 +221,24 @@ nav button svg{
 #page2-left{
     height: 100%;
     width: 40%;
-    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 3vw 0;
+}
+
+#page2-left p{
+    font-size: 1.1vw; 
+}
+
+#page2-left h5{
+    font-size: 1.2vw;
+    font-weight: 400;
+    width: 70%;
 }
 
 #page2-right{
     height: 100%;
     width: 50%;
-    background-color: #fff;
 }
