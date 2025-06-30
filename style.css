@@ -98,8 +98,7 @@ nav button svg{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* 👈 Change from center */
-    padding-top: 22vh;
+    justify-content: center;
 }
 
 #page1 h1{
@@ -210,7 +209,7 @@ nav button svg{
     height: 100vh;
     background-color: #111;
     position: relative;
-    padding: 2vw 10vw;
+    padding: 2vw 8vw;
     padding-bottom: 8vw;
     display: flex;
     align-items: center;
@@ -225,7 +224,7 @@ nav button svg{
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    padding: 3vw 0;
+    padding: 2vw 0;
 }
 
 #page2-left p{
@@ -242,3 +241,26 @@ nav button svg{
     height: 100%;
     width: 50%;
 }
+
+.right-elem{
+    position: relative;
+    padding: 2vw;
+    padding-bottom: 5vw;
+    border-bottom: 1px solid #333;
+}
+
+.right-elem h2{
+    font-size: 1.4vw;
+    font-weight: 400;
+}
+
+.right-elem img{
+    width: 7vw;
+    height: 7vw;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    scale: 0;
+}
+
