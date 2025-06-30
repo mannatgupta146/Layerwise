@@ -104,3 +104,35 @@ function page2Annimation() {
     });
 }
 page2Annimation();
+
+function page3VideoAnnimation() {
+    var page3Center = document.querySelector(".page3-center");
+    var video = document.querySelector("#page3 video");
+
+    page3Center.addEventListener("click", function () {
+        video.play();
+        gsap.to(video, {
+            scaleX: 1,
+            scaleY: 1,
+            opacity: 1,
+            borderRadius: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+    });
+
+    video.addEventListener("click", function () {
+        video.pause();
+        video.currentTime = 0; // optional: resets to beginning
+        gsap.to(video, {
+            scaleX: 0.7,
+            scaleY: 0,
+            opacity: 0,
+            borderRadius: "30px",
+            duration: 1,
+            ease: "power3.in"
+        });
+    });
+}
+
+page3VideoAnnimation();

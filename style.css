@@ -250,7 +250,7 @@ nav button svg{
 }
 
 .right-elem h2{
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     font-weight: 400;
 }
 
@@ -264,3 +264,71 @@ nav button svg{
     scale: 0;
 }
 
+#page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+    position: relative;
+    background-image: url(https://lazarev.kiev.ua/la24/reel-cover.webp);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#page3 video {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    transform: scaleX(0.7) scaleY(0);  /* Initial state */
+    opacity: 0;
+    border-radius: 30px;
+    z-index: 99999;
+    transition: none; /* Not needed since GSAP handles animation */
+}
+
+.page3-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1vw;
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+}
+
+.page3-center .icon {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5vw;
+    border-radius: 50%;
+}
+
+.page3-center .icon i {
+    font-size: 2.5vw;
+    color: #000;
+}
+
+.page3-center h5 {
+    font-size: 1vw;
+    font-weight: 600;
+    padding: 10px 26px;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #000;
+    margin-top: 0.5vw;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(16%);
+    transition: all ease 0.5s;
+}
+
+.page3-center:hover h5 {
+    opacity: 1;
+    transform: translateY(0%);
+}
