@@ -123,7 +123,7 @@ function page3VideoAnnimation() {
 
     video.addEventListener("click", function () {
         video.pause();
-        video.currentTime = 0; // optional: resets to beginning
+        video.currentTime = 0; 
         gsap.to(video, {
             scaleX: 0.7,
             scaleY: 0,
