@@ -134,5 +134,4 @@ function page3VideoAnnimation() {
         });
     });
 }
-
 page3VideoAnnimation();
