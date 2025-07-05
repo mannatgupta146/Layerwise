@@ -346,7 +346,7 @@ nav button svg{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10vh 10vw;
+    padding: 0vh 10vw;
 }
 
 .section:first-child {
@@ -370,28 +370,23 @@ nav button svg{
     font-size: 1.3vw;
     color: #000;
     margin-top: 7vh;
+    width: 93%;
 }
 
-.sec-right{
+.sec-right {
     height: 100%;
-    width: 50%;
+    width: 45%;
     position: relative;
-    padding-bottom: 5vh;
+    padding-bottom: 0;
+    overflow: hidden;
 }
 
-.sec-right img{
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-}
-
-.sec-right video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.sec-right img,
+.sec-right video {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
 }
-

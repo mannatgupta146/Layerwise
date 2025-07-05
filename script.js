@@ -136,7 +136,19 @@ function page3VideoAnnimation() {
 }
 page3VideoAnnimation();
 
-var sections = document.querySelectorAll(".section")
-sections.forEach((video) => {
+function setupPage4VideoHover() {
+    var sections = document.querySelectorAll(".sec-right");
+    sections.forEach(function (elem) {
+        var video = elem.querySelector("video");
+        elem.addEventListener("mouseenter", function () {
+            video.style.opacity = 1;
+            video.play();
+        });
+        elem.addEventListener("mouseleave", function () {
+            video.style.opacity = 0;
+            video.load();
+        });
+    });
+}
 
-})
+setupPage4VideoHover();
