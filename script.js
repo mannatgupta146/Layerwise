@@ -135,3 +135,8 @@ function page3VideoAnnimation() {
     });
 }
 page3VideoAnnimation();
+
+var sections = document.querySelectorAll(".section")
+sections.forEach((video) => {
+
+})
