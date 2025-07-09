@@ -52,7 +52,7 @@ nav h1:hover {
 }
 
 .navbar h5{
-     margin-bottom: 1vw;
+     margin-bottom: 1.1vw;
      display: none;
      overflow: hidden;
      cursor: pointer;
@@ -60,7 +60,7 @@ nav h1:hover {
 
 .navbar h5 span{
     font-weight: 400;
-    font-size: 0.8vw;
+    font-size: 1vw;
     display: inline-block;
 }
 
@@ -350,7 +350,7 @@ nav button svg{
 }
 
 .section:first-child {
-    padding-top: 20vh;
+    padding-top: 15vh;
 }
 
 .sec-left{
@@ -360,7 +360,7 @@ nav button svg{
 }
 
 .sec-left h2{
-    padding-top: 3vh;
+    padding-top: 5vh;
     font-size: 3vw;
     font-weight: 500;
     color: #000;
@@ -369,13 +369,13 @@ nav button svg{
 .sec-left p{
     font-size: 1.3vw;
     color: #000;
-    margin-top: 7vh;
+    margin-top: 10vh;
     width: 93%;
 }
 
 .sec-right {
     height: 100%;
-    width: 45%;
+    width: 50%;
     position: relative;
     padding-bottom: 0;
     overflow: hidden;
@@ -399,7 +399,7 @@ nav button svg{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 5vh 10vw;
+    padding: 10vh 10vw;
 }
 
 #page5 button{
@@ -420,7 +420,7 @@ nav button svg{
     font-size: 2.1vw;
 }
 
-#page5-right>p span{
+#page5-right >p span{
     width: 15vw;
     display: inline-block;
 }
@@ -432,10 +432,89 @@ nav button svg{
     border-top: 2px solid #fff;
 }
 
-#page5-content>h1{
+#page5-content h1{
     font-size: 3vw;
 }
 
 #page5-content #flex{
     display: flex;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    gap: 1vw;
+}
+
+#page5-content #flex h4{
+    border-radius: 50px;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    font-weight: 400;
+    font-size: 0.8vw; 
+    transition: transform 0.3s ease; 
+}
+
+#page5-content #flex h4:hover {
+    transform: scale(1.2); 
+}
+
+.page5-elem{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 5vh;
+    padding-bottom: 8vh;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #333;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+
+.page5-elem h3{
+    font-size: 1.5vw;
+    font-weight: 400;
+    position: relative;
+    z-index: 8;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+
+.page5-elem p{
+    font-size: 0.95vw;
+    width: 50%;
+    position: relative;
+    z-index: 8;
+}
+
+.page5-elem i{
+    font-size: 1.2vw;
+    cursor: pointer;
+    position: relative;
+    z-index: 8;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+
+.over5{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #1c1c1c;
+    top: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+
+.page5-elem:hover h3{
+    padding-left: 2vw;
+}
+
+.page5-elem:hover i{
+    padding-right: 1vw;
+}
+
+.page5-elem:hover .over5{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.page5-elem:hover{
+    border-top: 2px solid #fff;
 }
