@@ -136,7 +136,7 @@ function page3VideoAnnimation() {
 }
 page3VideoAnnimation();
 
-function setupPage4VideoHover() {
+function page4VideoHover() {
     var sections = document.querySelectorAll(".sec-right");
     sections.forEach(function (elem) {
         var video = elem.querySelector("video");
@@ -150,5 +150,55 @@ function setupPage4VideoHover() {
         });
     });
 }
+page4VideoHover();
 
-setupPage4VideoHover();
+
+gsap.to("#part2 h4",{
+    x:200,
+    duration: 1,
+    stagger:{
+        amount: -0.25,
+    },
+    scrollTrigger: {
+        trigger: "#part2 h4",
+        scroller: "body",
+        start: "top 80%",
+        end: "top -50%",
+        scrub: true,
+        toggleActions: "play none none reverse"
+    }
+})
+
+
+gsap.to("#part3 h4",{
+    x:60,
+    duration: 1,
+    stagger:{
+        amount: -0.25,
+    },
+    scrollTrigger: {
+        trigger: "#part3 h4",
+        scroller: "body",
+        start: "top 80%",
+        end: "top -50%",
+        scrub: true,
+        toggleActions: "play none none reverse"
+    }
+})
+
+
+gsap.to("#part4 h4",{
+    x:100,
+    duration: 1,
+    stagger:{
+        amount: -0.25,
+    },
+    scrollTrigger: {
+        trigger: "#part4 h4",
+        scroller: "body",
+        start: "top 80%",
+        end: "top -50%",
+        scrub: true,
+        toggleActions: "play none none reverse"
+    }
+})
