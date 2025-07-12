@@ -229,3 +229,31 @@ function loadingAnimation() {
 }
 loadingAnimation();
 
+
+function updateDateTime() {
+  const now  = new Date();
+
+  // format date ⇒ 13/07/2025
+  const date = now.toLocaleDateString('en-IN', {
+    day   : '2-digit',
+    month : '2-digit',
+    year  : 'numeric',
+    timeZone: 'Asia/Kolkata'
+  });
+
+  // format time ⇒ 02:53 AM
+  const time = now.toLocaleTimeString('en-IN', {
+    hour   : '2-digit',
+    minute : '2-digit',
+    second : '2-digit',
+    hour12 : true,
+    timeZone: 'Asia/Kolkata'
+  });
+
+  /* write date and time on two lines */
+  document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
+  document.getElementById('year').textContent   = now.getFullYear();
+}
+
+updateDateTime();              // first run
+setInterval(updateDateTime, 60000); // then every minute

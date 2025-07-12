@@ -403,7 +403,7 @@ nav button svg{
     padding: 10vh 10vw;
 }
 
-#page5 button{
+#page5 button {
     background-color: #0DA34E;
     font-size: 1vw;
     text-transform: uppercase;
@@ -413,6 +413,42 @@ nav button svg{
     border: none;
     position: sticky;
     top: 15%;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: slight scale + shine */
+#page5 button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.5), rgba(255,255,255,0.1));
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+#page5 button:hover::before {
+    animation: shineMove 1s ease-in-out;
+}
+
+#page5 button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(13, 163, 78, 0.4);
+}
+
+@keyframes shineMove {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
 }
 
 #page5-right {
@@ -594,7 +630,7 @@ details[open] .summary-header .arrow {
     width: 80%;
 }
 
-#blue-btn{
+#blue-btn {
     background-color: #4f5bff;
     width: 15vw;
     height: 3.5vw;
@@ -602,19 +638,174 @@ details[open] .summary-header .arrow {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-#blue-btn h4{
+#blue-btn::before {
+    content: "";
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.05) 0px,
+        rgba(255, 255, 255, 0.05) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#blue-btn:hover::before {
+    animation: glitter-lines 2s linear infinite;
+    opacity: 1;
+}
+
+@keyframes glitter-lines {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+#blue-btn {
+    background-color: #4f5bff;
+    width: 15vw;
+    height: 3.5vw;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Glitter shimmer lines */
+#blue-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.05) 0,
+        rgba(255, 255, 255, 0.15) 2px,
+        transparent 4px,
+        transparent 12px
+    );
+    animation: glitterMove 2.5s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+#blue-btn:hover::before {
+    opacity: 1;
+}
+@keyframes glitterMove {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Base text style */
+#blue-btn h4 {
+    position: relative;
+    z-index: 2;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.9vw;
+    color: white;
 }
 
-#blue-btn i{
-    font-size: 1.1vw;
-    font-weight: 300;
-    margin-left: 0.5vw;
+/* Glitch effect */
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(class); /* fallback if span is empty */
+    content: "See all Case Studies \f35d"; /* Unicode for ri-arrow-right-up-line */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    background: transparent;
+    overflow: hidden;
+    width: 100%;
+    clip: rect(0, 900px, 0, 0);
+}
+
+.glitch-text::before {
+    animation: glitchTop 0.7s infinite linear alternate-reverse;
+    color: #ff00c8;
+    z-index: 3;
+}
+.glitch-text::after {
+    animation: glitchBottom 0.7s infinite linear alternate-reverse;
+    color: #00fff7;
+    z-index: 1;
+}
+
+@keyframes glitchTop {
+    0% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(0px, 0px);
+    }
+    10% {
+        clip: rect(0, 9999px, 3px, 0);
+        transform: translate(-2px, -2px);
+    }
+    20% {
+        clip: rect(0, 9999px, 5px, 0);
+        transform: translate(2px, 1px);
+    }
+    30% {
+        clip: rect(0, 9999px, 8px, 0);
+        transform: translate(-1px, -1px);
+    }
+    100% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(0);
+    }
+}
+
+@keyframes glitchBottom {
+    0% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(0px, 0px);
+    }
+    10% {
+        clip: rect(5px, 9999px, 10px, 0);
+        transform: translate(2px, 2px);
+    }
+    20% {
+        clip: rect(10px, 9999px, 15px, 0);
+        transform: translate(-2px, -1px);
+    }
+    30% {
+        clip: rect(15px, 9999px, 20px, 0);
+        transform: translate(1px, 1px);
+    }
+    100% {
+        clip: rect(0, 9999px, 0, 0);
+        transform: translate(0);
+    }
 }
 
 #page6-bottom{
@@ -713,4 +904,96 @@ details[open] .summary-header .arrow {
 
 #part2 h4:nth-child(7){
     transform: translateX(50%);
+}
+
+#page7 {
+  padding: 4rem 2rem;
+  background: #121212;
+  color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.thankyou-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeSlideIn 1s ease forwards;
+}
+
+.thankyou-text {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.sub-text {
+  font-size: 1rem;
+  color: #bbbbbb;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  animation: fadeSlideIn 1.5s ease forwards;
+}
+
+.left-footer,
+.right-footer {
+  flex: 1 1 300px;
+}
+
+.left-footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+}
+
+.left-footer p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0.3rem 0;
+}
+
+.right-footer h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.social-icons a {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-right: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #1da1f2;
+  transform: translateY(-3px);
+}
+
+/* Fade + Slide In Animation */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
