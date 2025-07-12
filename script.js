@@ -1,3 +1,40 @@
+function locomotiveAnimation() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector("#main"),
+        smooth: true,
+
+        // for tablet smooth
+        tablet: { smooth: true },
+
+        // for mobile
+        smartphone: { smooth: true }
+    });
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy("#main", {
+        scrollTop(value) {
+            return arguments.length
+                ? locoScroll.scrollTo(value, 0, 0)
+                : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
+        }
+    });
+
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+    ScrollTrigger.refresh();
+}
+locomotiveAnimation();
+
 Shery.mouseFollower();
 
 Shery.makeMagnet("nav h5" );
@@ -76,7 +113,6 @@ function navAnimation() {
 }
 navAnimation()
 
-
 function page2Annimation() {
     var rightElems = document.querySelectorAll(".right-elem");
 
@@ -152,53 +188,21 @@ function page4VideoHover() {
 }
 page4VideoHover();
 
+function page6Animations() {
+    gsap.from("#part2 h4", {
+        x: 0,
+        duration: 1,
+        scrollTrigger: {
+            trigger: "#part2",
+            scroller: "#main",
+            start: "top 80%",
+            end: "top 10%",
+            scrub: true
+        }
+    })
+}
+page6Animations();  
 
-gsap.to("#part2 h4",{
-    x:200,
-    duration: 1,
-    stagger:{
-        amount: -0.25,
-    },
-    scrollTrigger: {
-        trigger: "#part2 h4",
-        scroller: "body",
-        start: "top 80%",
-        end: "top -50%",
-        scrub: true,
-        toggleActions: "play none none reverse"
-    }
-})
-
-
-gsap.to("#part3 h4",{
-    x:60,
-    duration: 1,
-    stagger:{
-        amount: -0.25,
-    },
-    scrollTrigger: {
-        trigger: "#part3 h4",
-        scroller: "body",
-        start: "top 80%",
-        end: "top -50%",
-        scrub: true,
-        toggleActions: "play none none reverse"
-    }
-})
-
-
-gsap.to("#part4 h4",{
-    x:100,
-    duration: 1,
-    stagger:{
-        amount: -0.25,
-    },
-    scrollTrigger: {
-        trigger: "#part4 h4",
-        scroller: "body",
-        start: "top 80%",
-        end: "top -50%",
-        scrub: true,
-        toggleActions: "play none none reverse"
-    }
-})
+function loadingAnimation() {
+    
+}

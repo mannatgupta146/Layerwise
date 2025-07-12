@@ -71,7 +71,7 @@ nav button{
     font-weight: 700;
     display: flex;
     align-items: center;
-    padding: 14px 20px;
+    padding: 14px 16px;
     border-radius: 50px;
     border: none;
 }
@@ -99,6 +99,7 @@ nav button svg{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 #page1 h1{
@@ -688,4 +689,28 @@ details[open] .summary-header .arrow {
     padding: 0.3vw;
     border-radius: 50%;
     margin-right: 1vw;
+}
+
+#part2 h4:nth-child(2){
+    transform: translateX(0);
+}
+
+#part2 h4:nth-child(3){
+    transform: translateX(10%);
+}
+
+#part2 h4:nth-child(4){
+    transform: translateX(20%);
+}
+
+#part2 h4:nth-child(5){
+    transform: translateX(30%);
+}
+
+#part2 h4:nth-child(6){
+    transform: translateX(40%);
+}
+
+#part2 h4:nth-child(7){
+    transform: translateX(50%);
 }
