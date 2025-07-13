@@ -176,18 +176,35 @@ function page3VideoAnnimation() {
 page3VideoAnnimation();
 
 function page4VideoHover() {
-    var sections = document.querySelectorAll(".sec-right");
-    sections.forEach(function (elem) {
-        var video = elem.querySelector("video");
-        elem.addEventListener("mouseenter", function () {
-            video.style.opacity = 1;
-            video.play();
-        });
-        elem.addEventListener("mouseleave", function () {
-            video.style.opacity = 0;
-            video.load();
-        });
+  var sections = document.querySelectorAll(".sec-right");
+
+  sections.forEach(function (elem) {
+    var video = elem.querySelector("video");
+    var img = elem.querySelector("img");
+
+    // Desktop behavior
+    elem.addEventListener("mouseenter", function () {
+      if (window.innerWidth > 768) {
+        video.style.opacity = 1;
+        video.play();
+      }
     });
+
+    elem.addEventListener("mouseleave", function () {
+      if (window.innerWidth > 768) {
+        video.style.opacity = 0;
+        video.load();
+      }
+    });
+
+    // Mobile behavior - tap image to play video
+    img.addEventListener("click", function () {
+      if (window.innerWidth <= 768) {
+        elem.classList.add("active");
+        video.play();
+      }
+    });
+  });
 }
 page4VideoHover();
 
