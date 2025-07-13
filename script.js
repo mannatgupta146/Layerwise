@@ -180,9 +180,9 @@ function page4VideoHover() {
 
   sections.forEach(function (elem) {
     var video = elem.querySelector("video");
-    var img = elem.querySelector("img");
+    var image = elem.querySelector("img");
 
-    // Desktop behavior
+    // Desktop: Hover to play
     elem.addEventListener("mouseenter", function () {
       if (window.innerWidth > 768) {
         video.style.opacity = 1;
@@ -197,11 +197,19 @@ function page4VideoHover() {
       }
     });
 
-    // Mobile behavior - tap image to play video
-    img.addEventListener("click", function () {
+    // Mobile: Tap to play
+    image.addEventListener("click", function () {
       if (window.innerWidth <= 768) {
-        elem.classList.add("active");
+        elem.classList.add("active"); // Adds class to switch to video in CSS
         video.play();
+      }
+    });
+
+    // Optional: Hide video and show image again when video ends
+    video.addEventListener("ended", function () {
+      if (window.innerWidth <= 768) {
+        elem.classList.remove("active");
+        video.load();
       }
     });
   });
