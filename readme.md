@@ -27,7 +27,7 @@ Built to practice modern front-end development techniques with a strong focus on
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/mannatgupta146/layerwise.git
+   git clone https://github.com/mannatgupta146/Layerwise.git
    ```
 
 2. **Navigate to the project folder**
