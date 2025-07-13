@@ -35,15 +35,18 @@ function locomotiveAnimation() {
 }
 locomotiveAnimation();
 
-Shery.mouseFollower();
+if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+  // Only run mouseFollower on non-touch devices
+  Shery.mouseFollower();
+}
 
 Shery.makeMagnet("nav h5" );
 
 Shery.textAnimate("nav h4", {
   style: 1,
   y: 1,
-  delay: 0.1,
-  duration: 1,
+  delay: 0.3,
+  duration: 10,
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
   multiplier: 1,
 });
@@ -257,3 +260,17 @@ function updateDateTime() {
 
 updateDateTime();              // first run
 setInterval(updateDateTime, 60000); // then every minute
+
+function setupHamburgerMenuToggle() {
+  const hamburger = document.getElementById("hamburger");
+  const navbar = document.querySelector(".navbar");
+
+  if (hamburger && navbar) {
+    hamburger.addEventListener("click", () => {
+      navbar.classList.toggle("show");
+    });
+  }
+}
+
+// Call the function after the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", setupHamburgerMenuToggle);
