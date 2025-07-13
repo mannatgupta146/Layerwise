@@ -102,34 +102,49 @@ function navAnimation() {
 
 navAnimation();
 
-
 function page2Annimation() {
+    const canHover = window.matchMedia("(hover: hover)").matches;
+    const wideEnough = window.innerWidth > 768;
+
+    // 👉 Skip animation on mobile/touch screens
+    if (!(canHover && wideEnough)) return;
+
     var rightElems = document.querySelectorAll(".right-elem");
 
     rightElems.forEach((elem) => {
+        const tooltip = elem.childNodes[3]; // ideally, use a class or querySelector for clarity
+
         elem.addEventListener("mouseenter", function () {
-            gsap.to(elem.childNodes[3], {
+            gsap.to(tooltip, {
                 opacity: 1,
-                scale: 1
+                scale: 1,
+                duration: 0.3,
+                ease: "power2.out"
             });
         });
 
         elem.addEventListener("mouseleave", function () {
-            gsap.to(elem.childNodes[3], {
+            gsap.to(tooltip, {
                 opacity: 0,
-                scale: 0
+                scale: 0,
+                duration: 0.3,
+                ease: "power2.in"
             });
         });
 
         elem.addEventListener("mousemove", function (dets) {
-            gsap.to(elem.childNodes[3], {
-                x: dets.clientX - elem.getBoundingClientRect().x - 50,
-                y: dets.clientY - elem.getBoundingClientRect().y - 150
+            const bounds = elem.getBoundingClientRect();
+            gsap.to(tooltip, {
+                x: dets.clientX - bounds.x - 50,
+                y: dets.clientY - bounds.y - 150,
+                duration: 0.2,
+                ease: "power1.out"
             });
         });
     });
 }
 page2Annimation();
+
 
 function page3VideoAnnimation() {
     var page3Center = document.querySelector(".page3-center");
