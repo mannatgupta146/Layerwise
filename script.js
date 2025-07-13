@@ -59,62 +59,49 @@ Shery.imageMasker("nav button", {
 });
 
 function navAnimation() {
-    const nav = document.querySelector("nav");
-    const navBottom = document.querySelector("#nav-bottom");
-    const h5s = document.querySelectorAll(".navbar h5");
-    const spans = document.querySelectorAll(".navbar h5 span");
+  // ❓  Detect touch / non‑hover devices
+  // (matchMedia is more reliable than window.innerWidth alone)
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  const wideEnough = window.innerWidth > 768;      // your mobile breakpoint
 
-    let tl; 
+  if (!(canHover && wideEnough)) {
+    // 👉  On touch devices or narrow screens we do nothing;
+    //     the hamburger‑menu JS handles open/close instead.
+    return;
+  }
 
-    nav.addEventListener("mouseenter", () => {
-        if (tl) tl.kill();
-        tl = gsap.timeline();
+  /* ---------- DESKTOP HOVER ANIMATION ---------- */
+  const nav        = document.querySelector("nav");
+  const navBottom  = document.querySelector("#nav-bottom");
+  const h5s        = document.querySelectorAll(".navbar h5");
+  const spans      = document.querySelectorAll(".navbar h5 span");
 
-        tl.to(navBottom, {
-            height: "25vh",
-            duration: 0.2,
-            ease: "power2.out"
-        });
+  let tl;
 
-        tl.set(h5s, { display: "block" }, "<");
+  nav.addEventListener("mouseenter", () => {
+    if (tl) tl.kill();
+    tl = gsap.timeline()
+      .to(navBottom, { height: "25vh", duration: 0.2, ease: "power2.out" })
+      .set(h5s, { display: "block" }, "<")
+      .fromTo(
+        spans,
+        { y: 25, autoAlpha: 0 },
+        { y: 0, autoAlpha: 1, duration: 0.4, stagger: 0.06, ease: "power3.out" },
+        "-=0.2"
+      );
+  });
 
-        tl.fromTo(spans,
-            { y: 25, autoAlpha: 0 },
-            {
-                y: 0,
-                autoAlpha: 1,
-                duration: 0.4,
-                stagger: 0.06,
-                ease: "power3.out"
-            },
-            "-=0.2"
-        );
-    });
-
-    nav.addEventListener("mouseleave", () => {
-        if (tl) tl.kill(); 
-        tl = gsap.timeline();
-
-        tl.to(spans,
-            {
-                y: 25,
-                autoAlpha: 0,
-                duration: 0.1,
-                stagger: 0.05,
-                ease: "power3.in"
-            }
-        );
-
-        tl.set(h5s, { display: "none" });
-
-        tl.to(navBottom, {
-            height: 0,
-            duration: 0.05,
-            ease: "power2.inOut"
-        }, "<");
-    });
+  nav.addEventListener("mouseleave", () => {
+    if (tl) tl.kill();
+    tl = gsap.timeline()
+      .to(spans, { y: 25, autoAlpha: 0, duration: 0.1, stagger: 0.05, ease: "power3.in" })
+      .set(h5s, { display: "none" })
+      .to(navBottom, { height: 0, duration: 0.05, ease: "power2.inOut" }, "<");
+  });
 }
-navAnimation()
+
+navAnimation();
+
 
 function page2Annimation() {
     var rightElems = document.querySelectorAll(".right-elem");
